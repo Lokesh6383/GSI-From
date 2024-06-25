@@ -3,6 +3,7 @@
 <head>
     <title>Simple Form</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <form id="contactForm">
@@ -19,20 +20,19 @@
         <select id="designation" name="designation" required>
             <option value="Developer">Web Developer</option>
             <option value="Designer">FrontEnd Developer</option>
-            <option value="Manager">BackEnd Developer</option>
-            <option value="Manager">UI/UX Developer</option>
-            <option value="Manager">Others</option>
+            <option value="Designer">BackEnd Developer</option>
+            <option value="Developer">UI/UX Developer</option>
+            <option value="Others">Others</option>
         </select>
 
         <label for="resume">Resume:</label>
         <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
 
         <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required placeholder="Text "></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Text "></textarea>
 
         <button type="submit">Submit</button>
     </form>
-
-    <script src="scripts.js"></script>
+    <script src="formdata.js"></script>
 </body>
 </html>

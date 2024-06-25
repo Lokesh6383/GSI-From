@@ -1,47 +1,94 @@
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
+    background: url('Form BG.jpg');
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+    position: relative; 
 }
 
-form {
-    background: #fff;
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Form BG.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* Apply the blur effect */
+}
+
+/* Form Container */
+#contactForm {
+    background: rgba(255, 255, 255, 0.5); 
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 350px;
-    
+    animation: fadeIn 1s ease-in-out;
+    z-index: 1; 
 }
 
+/* Form Elements */
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-top: 10px;
 }
 
-input, select, textarea {
-    width: 90%;
-    padding: 8px;
-    margin-bottom: 10px;
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea,
+input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border: 1px solid #6a11cb;
+    outline: none;
 }
 
 button {
-    width: 100%;
+    background: #2575fc;
+    color: white;
     padding: 10px;
-    background: #0465f6;
     border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
     cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
 }
 
 button:hover {
-    background: #0465f6;
+    background: #6a11cb;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
